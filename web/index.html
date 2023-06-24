@@ -1,0 +1,122 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="author" content="Matthew Enderle">
+  <title>338CTS ASE Lab - Webserver</title>
+
+  <link rel="canonical" href="https://getbootstrap.com/docs/5.0/examples/starter-template/">
+
+
+
+  <!-- Bootstrap core CSS -->
+  <link href="/assets/css/bootstrap.min.css" rel="stylesheet">
+
+  <style>
+    .bd-placeholder-img {
+      font-size: 1.125rem;
+      text-anchor: middle;
+      -webkit-user-select: none;
+      -moz-user-select: none;
+      user-select: none;
+    }
+
+    @media (min-width: 768px) {
+      .bd-placeholder-img-lg {
+        font-size: 3.5rem;
+      }
+    }
+  </style>
+
+
+  <!-- Custom styles for this template -->
+  <link href="/assets/css/aselab.css" rel="stylesheet">
+  <link href="/assets/css/classificationBanner.css" rel="stylesheet">
+</head>
+
+<body>
+
+  <div class="classificationBanner unclassified">
+    <div class="classificationBanner content">
+      <span>UNCLASSIFIED//FOR TRAINING USE ONLY</span>
+    </div>
+  </div>
+
+  <div class="col-lg-8 mx-auto p-3 py-md-5">
+    <header class="d-flex align-items-center pb-3 mb-5 border-bottom">
+      <a href="/" class="d-flex align-items-center text-dark text-decoration-none">
+        <img src="favicon-32x32.png" width="32" height="32" class="me-2" viewBox="0 0 118 94">
+        <span class="fs-4">338th CTS - ASE Lab Webserver</span>
+      </a>
+    </header>
+
+    <main>
+      <h1>Kickstart your Linux Training</h1>
+      <p class="fs-5 col-md-8">This webpage is meant to provide a status update on various changes made to the training
+        environment.
+      </p>
+
+      <div class="mb-5">
+        <a href="#" class="btn btn-primary btn-lg px-4" onclick="goToBookStack()">Get Started</a>
+      </div>
+
+      <hr class="col-3 col-md-2 mb-5">
+
+      <div class="row g-5">
+        <div class="col-md-6">
+          <h2>Installed Applications</h2>
+          <p>This list contains several of the web accessable applications installed on this lab.</p>
+          <ul class="application-list">
+            <li><a href="#" rel="noopener" onClick="goToPHPMyAdmin()">PHPMyAdmin (Database)</a></li>
+            <li><a href="#" rel="noopener" onClick="goToBookStack()">Bookstack (Docs)</a></li>
+          </ul>
+        </div>
+
+        <div class="col-md-6">
+          <h2>Contributors</h2>
+          <p>This suite of tools was developed by the following individuals.</p>
+          <ul class="contributor-list">
+            <li><a href="https://github.com/Matthewenderle"><img src="/assets/img/contributors/matthewenderle.jpg"
+                  class="rounded-circle  me-2" viewBox="0 0 118 94">Matthew Enderle</a></li>
+          </ul>
+          <p>Do you want to contribute to this project, visit our <a
+              href="https://github.com/338CTS-ASELab/Webserver">Github Page</a> to get more information.</p>
+        </div>
+      </div>
+    </main>
+    <footer class="pt-5 my-5 text-muted border-top">
+      Created by ASEs <i>for ASEs</i> &middot; &copy; 2023
+    </footer>
+  </div>
+
+
+  <script src="/assets/js/bootstrap.bundle.min.js"></script>
+
+  <script>
+
+    function goToBookStack() {
+      const url = window.location.href;
+      if (url.includes("server1.aselan")) {
+        window.location.href = 'http://server1.aselan:6875';
+      } else if (url.includes("aselab.enderle.io")) {
+        window.location.href = 'http://docs-aselab.enderle.io';
+      }
+    }
+
+
+    function goToPHPMyAdmin() {
+      const url = window.location.href;
+      if (url.includes("server1.aselan")) {
+        window.location.href = 'http://server1.aselan:8080';
+      } else if (url.includes("aselab.enderle.io")) {
+        alert('PHPMyAdmin is not publicly accessable.');
+      }
+    }
+
+  </script>
+
+</body>
+
+</html>
